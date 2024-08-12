@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShoppingCartAPI</name>
+    </assembly>
+    <members>
+        <member name="T:ShoppingCartAPI.Migrations.initial">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initial.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initial.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initial.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ShoppingCartAPI.Migrations.initail">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initail.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initail.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.initail.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ShoppingCartAPI.Migrations.war">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:ShoppingCartAPI.Migrations.war1">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ShoppingCartAPI.Migrations.war1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

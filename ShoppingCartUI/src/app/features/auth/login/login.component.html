@@ -1,0 +1,62 @@
+
+
+<div class="container">
+  <div class="mt-5">
+      <div class="col-12 col-md-8 col-lg-6 mx-auto">
+          <div class="card shadow">
+              <div class="card-body">
+                  <h1 class="text-center mb-4">Login</h1>
+
+                  <form #form="ngForm" (ngSubmit)="onFormSubmit(form)">
+                      <!-- Email Input -->
+                      <div class="mb-3">
+                          <label for="email" class="form-label">Email</label>
+                          <div class="input-group">
+                              <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                              <input type="email" class="form-control" id="email" name="email"
+                                  [(ngModel)]="model.email" required email>
+                          </div>
+                          <div *ngIf="form.controls['email']?.invalid && (form.controls['email']?.touched || form.controls['email']?.dirty)">
+                              <div class="alert alert-danger mt-2" role="alert">
+                                  <small *ngIf="form.controls['email']?.errors?.['required']">Email is required.</small>
+                                  <small *ngIf="form.controls['email']?.errors?.['email']">Invalid email format.</small>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Password Input -->
+                      <div class="mb-3">
+                          <label for="password" class="form-label">Password</label>
+                          <div class="input-group">
+                              <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                              <input type="password" class="form-control" id="password" name="password"
+                                  [(ngModel)]="model.password" required>
+                          </div>
+                          <div *ngIf="form.controls['password']?.invalid && (form.controls['password']?.touched || form.controls['password']?.dirty)">
+                              <div class="alert alert-danger mt-2" role="alert">
+                                  <small *ngIf="form.controls['password']?.errors?.['required']">Password is required.</small>
+                              </div>
+                          </div>
+                      </div>
+
+                      <!-- Error Message -->
+                      <div *ngIf="errorMessage" class="alert alert-danger mt-3" role="alert">
+                          {{ errorMessage }}
+                      </div>
+
+                      <!-- Submit Button -->
+                      <div class="text-center mt-4">
+                          <button type="submit" class="btn btn-primary" [disabled]="form.invalid">
+                              <i class="bi bi-box-arrow-in-right"></i> Login
+                          </button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+
+  

@@ -1,0 +1,28 @@
+
+<div class="container">
+  <ng-container *ngIf="products$ | async as products">
+    <div class="card" *ngFor="let product of products">
+
+      <div class="top-div">
+        <div class="border">
+          <img [src]="product.featuredImageUrl">
+        </div>
+        <span> {{ product.price |currency }}</span>
+      </div>
+      <div class="bottom-div">
+        <h3>{{ product.name }}</h3>
+      </div>
+      <div class="last-section">
+        
+        <div class="d-flex justify-content-center gap-2">
+          <div class="buttons">
+            <button (click)="addToCart(product)">Add to cart</button>
+          </div>
+          <a [routerLink]="['/product', product.id]" class="btn btn-primary">
+            <i class="fas fa-info-circle"></i> Read More
+          </a>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

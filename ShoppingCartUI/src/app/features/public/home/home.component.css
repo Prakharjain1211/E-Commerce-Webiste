@@ -1,0 +1,113 @@
+/* Container styling */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Card styling */
+.card {
+  position: relative;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+
+/* Top section styling */
+.top-div {
+  position: relative;
+  overflow: hidden;
+  height: 200px; /* Fixed height for images */
+}
+
+.border {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  height: 100%; 
+}
+
+img {
+  width: 60%;
+  height: 65%;
+  /* object-fit: cover; */
+  /* display: block; */
+  display:flexbox;
+  margin-left: 60px;
+  margin-top: 45px;
+}
+
+span {
+  display: block;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Bottom section styling */
+.bottom-div {
+  padding: 16px;
+}
+
+h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Last section styling */
+.last-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  border-top: 1px solid #ddd;
+}
+
+.last-div i {
+  color: #333;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+.buttons button {
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.buttons button:hover {
+  background: #45a049;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .card {
+    width: 100%;
+    max-width: 400px;
+  }
+}

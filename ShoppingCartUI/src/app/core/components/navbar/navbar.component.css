@@ -1,0 +1,44 @@
+.navbar {
+    border-bottom: 2px solid #28a745; /* Accent border */
+    margin-bottom: 100px;
+    flex: auto;
+  }
+  
+  .navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem; /* Larger brand name */
+  }
+  
+  .nav-link {
+    transition: color 0.2s ease-in-out; /* Smooth color transition */
+  }
+  
+  .nav-link:hover {
+    color: #28a745; /* Highlight on hover */
+  }
+  
+  .btn-primary {
+    transition: background-color 0.2s ease; /* Smooth background transition */
+  }
+  
+  .btn-danger {
+    transition: background-color 0.2s ease; /* Smooth background transition */
+  }
+  
+  .btn-outline-secondary {
+    color: #6c757d;
+  }
+  
+  .btn-outline-secondary:hover {
+    background-color: #e9ecef;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif; /* Default font for the body */
+  }
+  
+  .navbar {
+    font-family: 'Poppins', sans-serif; /* Navbar font */
+    border-bottom: 2px solid #28a745; /* Accent border */
+  }
+  

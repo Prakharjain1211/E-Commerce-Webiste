@@ -1,0 +1,126 @@
+<!-- <div class="cart-container mt-3">
+  <h2 class="text-center mb-4">Cart</h2>
+  <div *ngIf="cartItems.length > 0; else emptyCart">
+    <table class="table table-striped table-sm cart-table">
+      <thead class="table-primary">
+        <tr>
+          <th>Name</th>
+          <th>Quantity</th>
+          <th>Price</th>
+          <th>Total</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td>{{ item.product.name }}</td>
+          <td>{{ item.quantity }}</td>
+          <td><span>₹ </span>{{ item.product.price }}</td>
+          <td><span>₹ </span>{{ item.product.price * item.quantity }}</td>
+          <td>
+            <button class="btn btn-outline-secondary btn-sm me-1"
+                    *ngIf="item.product?.id !== undefined"
+                    (click)="decrementCartItem(item.product.id)">
+              <i class="fas fa-minus"></i>
+            </button>
+            <button class="btn btn-outline-secondary btn-sm me-1"
+                    *ngIf="item.product?.id !== undefined"
+                    (click)="incrementCartItem(item.product.id)">
+              <i class="fas fa-plus"></i>
+            </button>
+            <button class="btn btn-outline-danger btn-sm"
+                    (click)="removeFromCart(item.product.id)">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="text-end">
+      <button class="btn btn-primary" [routerLink]="['/checkout']">
+        <i class="fas fa-shopping-cart me-1"></i> Checkout
+      </button>
+    </div>
+  </div>
+  <ng-template #emptyCart>
+    <div class="alert alert-warning text-center">
+      <p>Your Cart is Empty</p>
+    </div>
+  </ng-template>
+</div> -->
+
+
+<div class="card">
+  <div class="row">
+    <!-- Cart Section -->
+    <div class="col-md-8 cart">
+      <div class="title mb-3">
+        <div class="row">
+          <div class="col">
+            <h4><b><i class="fas fa-shopping-cart"></i> Cart</b></h4>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row border-top border-bottom" *ngFor="let item of cartItems">
+        <div class="row main align-items-center">
+          <div class="col-3 col-md-2">
+            <img class="img-fluid" [src]="item.product.featuredImageUrl" alt="Product Image">
+          </div>
+          <div class="col-7 col-md-6">
+            <div class="row">{{ item.product.name }}</div>
+            <div class="row text-muted">{{ item.product.shortDescription }}</div>
+          </div>
+          <div class="col-2 col-md-2 text-center">
+            <a *ngIf="item.product?.id !== undefined" (click)="decrementCartItem(item.product.id)">
+              <i class="fas fa-minus-circle"></i>
+            </a>
+            <span class="border px-2">{{ item.quantity }}</span>
+            <a *ngIf="item.product?.id !== undefined" (click)="incrementCartItem(item.product.id)">
+              <i class="fas fa-plus-circle"></i>
+            </a>
+          </div>
+          <div class="col-2 col-md-2 text-right d-flex align-items-center justify-content-end">
+            <span>{{ item.product.price * item.quantity | currency }}</span>
+            <span class="close ml-2" (click)="removeFromCart(item.product.id)">
+              <i class="fas fa-trash-alt"></i>
+            </span>
+          </div>
+        </div>
+      </div>
+      
+      <div class="back-to-shop mt-3">
+        <a href="#" class="text-muted">
+          <i class="fas fa-arrow-left"></i> Back to shop
+        </a>
+      </div>
+    </div>
+    
+    <!-- Summary Section -->
+    <div class="col-md-4 summary">
+      <div>
+        <h5><b><i class="fas fa-receipt"></i> Summary</b></h5>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-6"><i class="fas fa-box"></i> ITEMS {{cartItems.length}}</div>
+        <div class="col-6 text-right">{{calculateTotalPrice() | currency}}</div>
+      </div>
+      <form>
+        <p class="mt-2 mb-1"><i class="fas fa-truck"></i> SHIPPING</p>
+        <select>
+          <option class="text-muted">Standard Delivery - $5.00</option>
+        </select>
+        <p class="mt-2 mb-1"><i class="fas fa-gift"></i> GIVE CODE</p>
+        <input id="code" placeholder="Enter your code">
+      </form>
+      <div class="row border-top pt-2">
+        <div class="col-6"><i class="fas fa-dollar-sign"></i> TOTAL PRICE</div>
+        <div class="col-6 text-right">{{TotalPrice() | currency}}</div>
+      </div>
+      <button class="btn btn-dark mt-4" [routerLink]="['/checkout']">
+        <i class="fas fa-check"></i> CHECKOUT
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,77 @@
+
+<div class="bg-image">
+    <div class="container">
+        <div class="mt-5">
+            <div class="col-12 col-md-8 col-lg-6 mx-auto">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h1 class="text-center mb-4">Create an Account</h1>
+
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <!-- Email Input -->
+                            <div class="mb-3">
+                                <label for="email" class="form-label">Email</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                                    <input type="email" class="form-control" id="email" formControlName="email" required>
+                                </div>
+                                <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+                                    <div class="alert alert-danger mt-2" role="alert">
+                                        <small *ngIf="registerForm.get('email')?.errors?.['required']">Email is required.</small>
+                                        <small *ngIf="registerForm.get('email')?.errors?.['email']">Invalid email format.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Password Input -->
+                            <div class="mb-3">
+                                <label for="password" class="form-label">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                    <input type="password" class="form-control" id="password" formControlName="password" required>
+                                </div>
+                                <div *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+                                    <div class="alert alert-danger mt-2" role="alert">
+                                        <small *ngIf="registerForm.get('password')?.errors?.['required']">Password is required.</small>
+                                        <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Minimum 6 characters required.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Confirm Password Input -->
+                            <div class="mb-3">
+                                <label for="confirmPassword" class="form-label">Confirm Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
+                                    <input type="password" class="form-control" id="confirmPassword" formControlName="confirmPassword" required>
+                                </div>
+                                <div *ngIf="registerForm.errors?.['mismatch'] && registerForm.get('confirmPassword')?.touched">
+                                    <div class="alert alert-danger mt-2" role="alert">
+                                        <small>Passwords must match.</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Success/Error Message -->
+                            <div *ngIf="message" class="alert" [ngClass]="{'alert-success': message === 'Registration successful!', 'alert-danger': message !== 'Registration successful!'}" role="alert">
+                                {{ message }}
+                            </div>
+
+                            <!-- Submit Button -->
+                            <div class="text-center mt-4">
+                                <button type="submit" class="btn btn-primary" [disabled]="registerForm.invalid">
+                                    <i class="bi bi-person-plus-fill"></i> Register
+                                </button>
+                            </div>
+                        </form>
+
+                        <!-- Login Link -->
+                        <div class="text-center mt-3">
+                            <small>Already have an account? <a routerLink="/login" class="text-primary">Login here</a></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

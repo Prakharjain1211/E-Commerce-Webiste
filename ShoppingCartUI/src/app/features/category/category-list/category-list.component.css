@@ -1,0 +1,21 @@
+/* category-list.component.css */
+.table {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.table td, .table th {
+    vertical-align: middle;
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Light grey on hover */
+}
+
+.btn {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    opacity: 0.9;
+}

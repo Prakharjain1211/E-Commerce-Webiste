@@ -1,0 +1,121 @@
+
+    <!-- Navbar Container -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+      <div class="container">
+          <!-- Brand Logo and Name -->
+          <a class="navbar-brand d-flex align-items-center" href="#">
+              <img src="https://th.bing.com/th/id/OIP.z9W6Fb9S4Q0OzUlRPsycDAHaHa?w=202&h=202&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                  alt="ShopNest Logo" class="me-2" style="height: 50px;">
+              ShopNest
+          </a>
+
+          <!-- Navbar Toggle Button for Mobile View -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Collapsible Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <!-- Navbar Links -->
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <!-- Home Link -->
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" [routerLink]="['/']">
+                    <i class="fas fa-home me-2"></i> Home
+                  </a>
+                </li>
+              
+                <!-- Admin Dropdown Menu -->
+                <ng-container *ngIf="user?.email === 'admin@example.com'">
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <i class="fas fa-cogs me-2"></i> Admin
+                    </a>
+                    <ul class="dropdown-menu shadow-sm rounded">
+                      <li>
+                        <a class="dropdown-item" [routerLink]="['/categories']">
+                          <i class="fas fa-list me-2"></i> Categories
+                        </a>
+                      </li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li>
+                        <a class="dropdown-item" [routerLink]="['/admin/products']">
+                          <i class="fas fa-boxes me-2"></i> Products
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                </ng-container>
+              
+                <!-- Categories Link for Non-Admin Users -->
+                <ng-container *ngIf="user?.email !== 'admin@example.com'">
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/categories']">
+                      <i class="fas fa-tags me-2"></i> Categories
+                    </a>
+                  </li>
+                </ng-container>
+              </ul>
+              
+
+              <!-- Search Form Centered -->
+              <form class="d-flex mx-auto" (submit)="searchByCategory($event)">
+                  <input class="form-control me-2" type="search" placeholder="Search by category" aria-label="Search"
+                      [(ngModel)]="searchQuery" name="searchQuery">
+                  <button class="btn btn-outline-success" type="submit">Search</button>
+              </form>
+
+              <!-- User Actions and Links -->
+              <div class="d-flex align-items-center ms-3">
+                  <!-- Display Login/Register Buttons for Not Logged In Users -->
+                  <ng-container *ngIf="user === undefined; else showLoggedIn">
+                    <div class="d-flex flex-wrap">
+                      <!-- Login Button -->
+                      <a [routerLink]="['/login']" class="btn btn-outline-primary m-1 d-flex align-items-center px-4 py-2 rounded-pill shadow-sm">
+                        <i class="fas fa-sign-in-alt me-2"></i> Login
+                      </a>
+                  
+                      <!-- Register Button -->
+                      <a [routerLink]="['/register']" class="btn btn-outline-danger m-1 d-flex align-items-center px-4 py-2 rounded-pill shadow-sm">
+                        <i class="fas fa-user-plus me-2"></i> Register
+                      </a>
+                    </div>
+                  </ng-container>
+                  
+                  <!-- Display User Info and Logout Button for Logged In Users -->
+                  <ng-template #showLoggedIn>
+                    <div class="d-flex align-items-center bg-light p-3  ">
+                      <span class="fs-4 text-dark fw-semibold me-3">{{ getUsername() }}</span>
+                      <button class="btn btn-outline-primary d-flex align-items-center px-3 py-2 rounded-pill shadow-sm" (click)="onLogout()">
+                        <i class="fas fa-sign-out-alt me-2"></i> Logout
+                      </button>
+                    </div>
+                  </ng-template>
+                  
+                  <!-- Cart and Orders Links -->
+                  <div class="d-flex flex-wrap">
+                    <!-- Cart Button -->
+                    <a class="btn btn-outline-primary m-1 d-flex align-items-center px-3 py-2 rounded-pill shadow-sm" [routerLink]="['/cart']">
+                      <i class="fas fa-shopping-cart me-2"></i> Cart
+                    </a>
+                  
+                    <!-- Orders Button for Non-admin Users -->
+                    <ng-container *ngIf="user?.email !== 'admin@example.com'">
+                      <a class="btn btn-outline-success m-1 d-flex align-items-center px-3 py-2 rounded-pill shadow-sm" [routerLink]="['/orders']">
+                        <i class="fas fa-box me-2"></i> Orders
+                      </a>
+                    </ng-container>
+                  
+                    <!-- All Orders Button for Admin Users -->
+                    <ng-container *ngIf="user?.email === 'admin@example.com'">
+                      <a class="btn btn-outline-danger m-1 d-flex align-items-center px-3 py-2 rounded-pill shadow-sm" [routerLink]="['/orders']">
+                        <i class="fas fa-shopping-basket me-2"></i> All Orders
+                      </a>
+                    </ng-container>
+                  </div>
+                  
+              </div>
+          </div>
+      </div>
+  </nav>

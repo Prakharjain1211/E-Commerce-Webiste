@@ -1,0 +1,22 @@
+.orders-container {
+  max-width: 800px; /* Adjust as per your layout */
+  margin: auto;
+}
+
+.custom-table {
+  font-size: 0.9rem;
+}
+
+.alert-warning {
+  margin-top: 1rem;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+}

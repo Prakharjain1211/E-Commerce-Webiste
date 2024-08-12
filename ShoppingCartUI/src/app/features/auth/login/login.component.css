@@ -1,0 +1,21 @@
+
+
+body {
+    background-color: #e3f2fd;
+  }
+   
+  .card {
+    border-radius: 15px;
+  }
+   
+  .input-group-text {
+    background-color: #e3f2fd;
+    border: none;
+  }
+   
+  .form-check-input:checked {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  

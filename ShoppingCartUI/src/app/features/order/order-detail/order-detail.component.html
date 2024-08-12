@@ -1,0 +1,60 @@
+<div class="container mt-4" *ngIf="order; else loading">
+    <div class="card shadow">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Order Details</h2>
+        </div>
+        <div class="card-body">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <p class="font-weight-bold mb-1">Order ID:</p>
+                    <p class="mb-0">{{ order.id }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="font-weight-bold mb-1">Order Date:</p>
+                    <p class="mb-0">{{ order.orderDate | date }}</p>
+                </div>
+                <div class="col-md-4">
+                    <p class="font-weight-bold mb-1">Total Amount:</p>
+                    <p class="mb-0"><span class="text-success">{{ order.totalAmount | currency }}</span></p>
+                </div>
+            </div>
+
+            <hr>
+
+            <h3 class="text-primary mb-3">Order Items</h3>
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Quantity</th>
+                            <th scope="col">Unit Price</th>
+                            <th scope="col">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of order.orderItems">
+                            <td>{{ item.productName }}</td>
+                            <td>
+                                <img [src]="item.productUrl" alt="{{ item.productName }}" class="img-fluid rounded"
+                                    style="max-width: 100px;">
+                            </td>
+                            <td>{{ item.quantity }}</td>
+                            <td>₹ {{ item.unitPrice }}</td>
+                            <td>₹ {{ item.quantity * item.unitPrice }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<ng-template #loading>
+    <div class="container mt-4">
+        <div class="alert alert-info" role="alert">
+            Loading order details...
+        </div>
+    </div>
+</ng-template>

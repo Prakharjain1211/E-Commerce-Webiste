@@ -1,0 +1,171 @@
+body {
+  background: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+}
+
+.card {
+  margin: 2rem auto;
+  max-width: 950px;
+  width: 90%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 1rem;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin: 3vh auto;
+  }
+}
+
+.cart, .summary {
+  padding: 2rem;
+}
+
+.cart {
+  border-radius: 1rem 0 0 1rem;
+}
+
+@media (max-width: 767px) {
+  .cart {
+    padding: 1.5rem;
+    border-radius: 1rem 1rem 0 0;
+  }
+
+  .summary {
+    border-radius: 0 0 1rem 1rem;
+  }
+}
+
+.summary {
+  background-color: #f9f9f9;
+  border-radius: 0 1rem 1rem 0;
+  color: #333;
+}
+
+.title b {
+  font-size: 1.75rem;
+}
+
+.main {
+  margin: 1rem 0;
+}
+
+img {
+  width: 4rem;
+  max-width: 100px;
+}
+
+.col-2, .col-6 {
+  padding: 0.5rem;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+.close i {
+  color: #dc3545;
+}
+
+.btn {
+  background-color: #343a40;
+  border: none;
+  color: white;
+  width: 100%;
+  font-size: 1rem;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+}
+
+.btn:focus {
+  box-shadow: none;
+}
+
+.btn:hover {
+  background-color: #495057;
+}
+
+#code {
+  background-image: linear-gradient(to left, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.15)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 16px;
+}
+
+i {
+  font-size: 1.2rem;
+  margin-right: 0.5rem;
+}
+
+form {
+  padding: 1rem 0;
+}
+
+select, input {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  outline: none;
+  width: 100%;
+  background-color: #f9f9f9;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+h5 {
+  margin-top: 1rem;
+}
+
+hr {
+  margin: 1rem 0;
+}
+
+.back-to-shop a {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #007bff;
+}
+
+@media (max-width: 767px) {
+  .col-md-8, .col-md-4 {
+    padding: 1rem;
+  }
+
+  .col-2 {
+    width: 100%;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .text-right {
+    text-align: right;
+  }
+
+  .d-flex {
+    display: flex;
+  }
+
+  .align-items-center {
+    align-items: center;
+  }
+
+  .justify-content-end {
+    justify-content: flex-end;
+  }
+}
